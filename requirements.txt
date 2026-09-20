@@ -1,0 +1,7 @@
+# Indian Stocks MCP — dependencies
+# Note: pinned to MCP SDK v1. The v1 FastMCP API (mcp.server.fastmcp) is what
+# server.py uses. MCP 2.x renamed FastMCP -> MCPServer; upgrading needs a rewrite.
+mcp<2
+yfinance>=0.2.40
+pandas>=2.0
+requests>=2.31
