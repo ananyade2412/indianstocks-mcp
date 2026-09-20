@@ -25,11 +25,15 @@ from enum import Enum
 from typing import List, Optional
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 from pydantic import BaseModel, Field, ConfigDict
 
 import data_layer as dl
 
-mcp = FastMCP("indianstocks_mcp")
+mcp = FastMCP(
+    "indianstocks_mcp",
+    transport_security=TransportSecuritySettings(enable_dns_rebinding_protection=False),
+)
 
 WATCHLIST_PATH = pathlib.Path(__file__).parent / "watchlist.json"
 
